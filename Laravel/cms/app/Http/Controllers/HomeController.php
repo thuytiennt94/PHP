@@ -11,7 +11,8 @@ use Illuminate\Routing\Controller as BaseController;
 class HomeController extends BaseController
 {
     public function showWelcome(){
-//        return 'home ';
-        return view('home');
+//        return 'home controller';
+//        return view('home');
+        return view('index');
     }
 }
