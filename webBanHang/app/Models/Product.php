@@ -13,15 +13,27 @@ class Product extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function brand(){
+    public function brands(){
         return $this->belongsTo(Brand::class,'brand_id', 'id');
     }
 
     public function productCategory(){
-        return $this->belongsTo(ProductImage::class,'product_id', 'id');
+        return $this->belongsTo(ProductCategory::class,'product_category_id', 'id');
     }
 
     public function productImages(){
-        return $this->hasMany(Product::class,'product_category_id', 'id');
+        return $this->hasMany(ProductImage::class,'product_id ', 'id');
+    }
+
+    public function productDetails(){
+        return $this->hasMany(ProductDetail::class,'product_id ', 'id');
+    }
+
+    public function productComments(){
+        return $this->hasMany(ProductComment::class,'product_id ', 'id');
+    }
+
+    public function orderDetails(){
+        return $this->hasMany(OrderDetail::class,'product_id ', 'id');
     }
 }

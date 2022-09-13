@@ -96,9 +96,11 @@
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
+
+                        @foreach( $womenProducts as $womenProduct)
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="front/img/products/women-1.jpg" alt="">
+                                <img src="public/front/img/products/women-1.jpg" alt="">
                                 <div class="sale">Sale</div>
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
@@ -112,7 +114,7 @@
                             <div class="pi-text">
                                 <div class="category-name">Coat</div>
                                 <a href="">
-                                    <h5>Pure Pineapple</h5>
+{{--                                    <h5>{{ $womenProduct->name }}</h5>--}}
                                 </a>
                                 <div class="product-price">
                                     $14.00
@@ -120,75 +122,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="front/img/products/women-2.jpg" alt="">
+                        @endforeach
 
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href=""><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                                    <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="category-name">Coat</div>
-                                <a href="">
-                                    <h5>Guangzhou sewater</h5>
-                                </a>
-                                <div class="product-price">
-                                    $13.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="front/img/products/women-3.jpg" alt="">
-
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href=""><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                                    <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="category-name">Coat</div>
-                                <a href="">
-                                    <h5>Pure Pineopple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="front/img/products/women-4.jpg" alt="">
-
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href=""><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                                    <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="category-name">Coat</div>
-                                <a href="">
-                                    <h5>Converse Shoes0</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

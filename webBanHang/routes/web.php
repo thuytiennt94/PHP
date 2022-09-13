@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 
 //Route::get('/', function (){
 //   //return view('front.index');
@@ -23,7 +24,12 @@ use Illuminate\Support\Facades\Route;
 //    //return view('front.index');
 //    return \App\Models\Product::all();
 //});
-Route::get('/', function (){
 
-    return \App\Models\Brand::find(1)->products;
-});
+//Route::get('/', function (){
+//
+//    return \App\Models\Product::find(1)->productImages;
+//});
+
+//Route::get('/', function () {
+//    return view('front.index');
+//});
