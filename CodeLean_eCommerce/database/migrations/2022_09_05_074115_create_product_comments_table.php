@@ -20,7 +20,7 @@ class CreateProductCommentsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('email');
             $table->string('name');
-            $table->string('message');
+            $table->string('messages');
             $table->integer('rating')->unsigned();
 
             $table->timestamps();

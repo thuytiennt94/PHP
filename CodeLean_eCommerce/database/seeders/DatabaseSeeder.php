@@ -374,7 +374,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 4,
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
-                'message' => 'Nice !',
+                'messages' => 'Nice !',
                 'rating' => 4,
             ],
             [
@@ -383,7 +383,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 5,
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
-                'message' => 'Nice !',
+                'messages' => 'Nice !',
                 'rating' => 4,
             ],
         ]);

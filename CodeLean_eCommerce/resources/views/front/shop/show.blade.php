@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-text">
-                    <a href="index.html"><i class="fa fa-home"></i> Home</a>
-                    <a href="shop.html">Shop</a>
+                    <a href="./"><i class="fa fa-home"></i> Home</a>
+                    <a href="./shop">Shop</a>
                     <span>Detail</span>
                 </div>
             </div>
@@ -25,132 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                <div class="filter-widget">
-                    <h4 class="fw-title">Categories</h4>
-                    <ul class="filter-catagories">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kid</a></li>
-                    </ul>
-                </div>
-                <div class="filter-widget">
-                    <h4 class="fw-title">Brand</h4>
-                    <div class="fw-brand-check">
-                        <div class="bc-item">
-                            <label for="bc-calvin">
-                                Calvin Klein
-                                <input type="checkbox" name="" id="bc-calvin">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="bc-item">
-                            <label for="bc-calvin">
-                                Diesel
-                                <input type="checkbox" name="" id="bc-calvin">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="bc-item">
-                            <label for="bc-calvin">
-                                Polo
-                                <input type="checkbox" name="" id="bc-calvin">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="bc-item">
-                            <label for="bc-calvin">
-                                Tommy Hilfiger
-                                <input type="checkbox" name="" id="bc-calvin">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-widget">
-                    <h4 class="fw-title">Price</h4>
-                    <div class="filter-range-wrap">
-                        <div class="range-slider">
-                            <div class="price-input">
-                                <input type="text" name="" id="minamount">
-                                <input type="text" name="" id="maxamount">
-                            </div>
-                        </div>
-                        <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="33" data-max="98">
-                            <div class="ui-slider-range ui-corner-all ui-widget-header">
-
-                            </div>
-                            <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default">
-
-                                </span>
-                            <span  tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default">
-
-                                </span>
-                        </div>
-                    </div>
-                    <a href="#" class="filter-btn">Filter</a>
-                </div>
-                <div class="filter-widget">
-                    <h4 class="fw-title">Color</h4>
-                    <div class="fw-color-choose">
-                        <div class="cs-item">
-                            <input type="radio" name="" id="cs-black">
-                            <label for="cs-black" class="cs-black">Black</label>
-                        </div>
-                        <div class="cs-item">
-                            <input type="radio" name="" id="cs-violet">
-                            <label for="cs-violet" class="cs-violet">Violet</label>
-                        </div>
-                        <div class="cs-item">
-                            <input type="radio" name="" id="cs-blue">
-                            <label for="cs-blue" class="cs-blue">Blue</label>
-                        </div>
-                        <div class="cs-item">
-                            <input type="radio" name="" id="cs-yellow">
-                            <label for="cs-yellow" class="cs-yellow">Yellow</label>
-                        </div>
-                        <div class="cs-item">
-                            <input type="radio" name="" id="cs-red">
-                            <label for="cs-red" class="cs-red">Red</label>
-                        </div>
-                        <div class="cs-item">
-                            <input type="radio" name="" id="cs-green">
-                            <label for="cs-green" class="cs-green">Green</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-widget">
-                    <h4 class="fw-title">Size</h4>
-                    <div class="fw-size-choose">
-                        <div class="sc-item">
-                            <input type="radio" name="" id="s-size">
-                            <label for="s-size">S</label>
-                        </div>
-                        <div class="sc-item">
-                            <input type="radio" name="" id="m-size">
-                            <label for="s-size">M</label>
-                        </div>
-                        <div class="sc-item">
-                            <input type="radio" name="" id="l-size">
-                            <label for="s-size">L</label>
-                        </div>
-                        <div class="sc-item">
-                            <input type="radio" name="" id="xs-size">
-                            <label for="s-size">XS</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-widget">
-                    <h4 class="fw-title">Tags</h4>
-                    <div class="fw-tags">
-                        <a href="#">Towel</a>
-                        <a href="#">Shoes</a>
-                        <a href="#">Coat</a>
-                        <a href="#">Dresses</a>
-                        <a href="#">Trousers</a>
-                        <a href="#">Men's hats</a>
-                        <a href="#">Backpack</a>
-                    </div>
-                </div>
+                @include('front.shop.components.products-sidebar-filter')
             </div>
             <div class="col-lg-9">
                 <div class="row">
@@ -367,13 +242,13 @@
 
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <input type="text" name="name" id="" placeholder="Name">
+                                                    <input type="text" name="name"  placeholder="Name">
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <input type="text" name="email" id="" placeholder="Email">
+                                                    <input type="text" name="email"  placeholder="Email">
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <textarea name="messages" id="" cols="30" rows="10" placeholder="Messages"></textarea>
+                                                    <textarea name="messages"  cols="30" rows="10" placeholder="Messages"></textarea>
 
                                                     <div class="personal-rating">
                                                         <h6>Your Rating</h6>
@@ -419,101 +294,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="front/img/products/product-1.jpg" alt="">
-                        <div class="sale pp-sale">Sale</div>
-                        <div class="icon">
-                            <i class="icon_heart_alt"></i>
-                        </div>
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                            <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Towel</div>
-                        <a href="#">
-                            <h5>Pure Pineapple</h5>
-                        </a>
-                        <div class="product-price">
-                            $14.00
-                            <span>$35.00</span>
-                        </div>
-                    </div>
+            @foreach($relatedProducts as $relatedProduct)
+                <div class="col-lg-3 col-sm-6">
+                    @include('front.components.product-item', ['product' => $relatedProduct ])
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="front/img/products/product-2.jpg" alt="">
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                            <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Coat</div>
-                        <a href="#">
-                            <h5>Guangzhou sweater</h5>
-                        </a>
-                        <div class="product-price">
-                            $13.00
-                            <span>$35.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="front/img/products/product-3.jpg" alt="">
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                            <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Coat</div>
-                        <a href="#">
-                            <h5>Guangzhou sweater</h5>
-                        </a>
-                        <div class="product-price">
-                            $34.00
-                            <span>$35.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="front/img/products/product-4.jpg" alt="">
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="product.html">+ Quick View</a></li>
-                            <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Coat</div>
-                        <a href="#">
-                            <h5>Microfiber Wool Scarf</h5>
-                        </a>
-                        <div class="product-price">
-                            $64.00
-                            <span>$75.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
+
         </div>
     </div>
 </div>
 <!-- Related Products section end -->
+
 
 @endsection

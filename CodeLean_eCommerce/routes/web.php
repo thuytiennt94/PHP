@@ -14,6 +14,29 @@ use App\Http\Controllers\Front;
 */
 Route::get('/', [Front\HomeController::class, 'index']);
 
+
+Route::prefix('shop')->group(function (){
+    Route::get('/product/{id}', [Front\ShopController::class, 'show']);
+    Route::post('/product/{id}', [Front\ShopController::class, 'postComment']);
+
+    Route::get('/', [Front\ShopController::class,  'index']);
+
+    Route::get('/{categoryName}', [Front\ShopController::class,  'category']);
+});
+
+
+Route::prefix('cart')->group(function (){
+    Route::get('/add/{id}', [Front\CartController::class, 'add']);
+    Route::get('/', [Front\CartController::class, 'index']);
+
+    Route::get('delete/{rowId}', [Front\ShopController::class,  'delete']);
+
+    //Route::get('/{categoryName}', [Front\ShopController::class,  'category']);
+});
+
+
+
+
 //Route::get('/', function (){
 //   //return view('front.index');
 //    return \App\Models\User::all();
@@ -32,6 +55,6 @@ Route::get('/', [Front\HomeController::class, 'index']);
 //    return view('front.index');
 //});
 
-Route::get('/shop/product/{id}', [Front\ShopController::class, 'show']);
+/*Route::get('/shop/product/{id}', [Front\ShopController::class, 'show']);
 
-Route::post('/shop/product/{id}', [Front\ShopController::class, 'postComment']);
+Route::post('/shop/product/{id}', [Front\ShopController::class, 'postComment']);*/

@@ -14,6 +14,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="front/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="front/css/font-awesome.min.css" type="text/css">
@@ -88,13 +90,15 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-7">
-                    <div class="advanced-search">
-                        <button type="button" class="category-btn">All Categories</button>
-                        <div class="input-group">
-                            <input type="text" placeholder="What do you need">
-                            <button type="button"><i class="ti-search"></i></button>
+                    <form action="shop">
+                        <div class="advanced-search">
+                            <button type="button"  class="category-btn">All Categories</button>
+                            <div class="input-group">
+                                <input type="text" name="search" value="{{ request('search') }}" placeholder="What do you need">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-lg-3 col-md-3 text-white">
                     <ul class="nav-right">
@@ -105,35 +109,41 @@
                             </a>
                         </li>
                         <li class="cart-icon">
-                            <a href="#">
+                            <a href="./cart">
                                 <i class="icon_bag_alt"></i>
-                                <span>3</span>
+                                <span>{{ Cart::count() }}</span>
                             </a>
                             <div class="cart-hover">
                                 <div class="select-items">
                                     <table>
                                         <tbody>
-                                        <tr>
-                                            <td class="si-pic"><img src="front/img/select-product-1.jpg" alt=""></td>
-                                            -                          <td class="si-text">
-                                                <div class="product-selected">
-                                                    <p>$68.00 x 1</p>
-                                                    <h6>Kabino Bedside Table</h6>
-                                                </div>
-                                            </td>
-                                            <td class="si-close">
-                                                <i class="ti-close"></i>
-                                            </td>
-                                        </tr>
+
+                                        @foreach(Cart::content() as $cart)
+                                            <tr>
+                                                <td class="si-pic">
+                                                    <img style="height: 70px;" src="front/img/products/{{ $cart->options->images[0]->path }}" alt="">
+                                                </td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>${{ number_format($cart->price, 2) }} x {{ $cart->qty }}</p>
+                                                        <h6>{{ $cart->name  }}</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i class="ti-close"></i>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="select-total">
                                     <span>total:</span>
-                                    <h5>$120.00</h5>
+                                    <h5>${{ Cart::total() }}</h5>
                                 </div>
                                 <div class="select-button">
-                                    <a href="shopping-cart.html" class="primary-btn view-card">View Card</a>
+                                    <a href="./cart" class="primary-btn view-card">View Card</a>
                                     <a href="check-out.html" class="primary-btn checkout-btn">Check out</a>
                                 </div>
                             </div>
@@ -165,8 +175,8 @@
             </div>
             <nav class="nav-menu mobile-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
+                    <li class="{{ (request()->segment(1) == '' ) ? 'active' : '' }}"><a href="./">Home</a></li>
+                    <li class="{{ (request()->segment(1) == 'shop' ) ? 'active' : '' }}"><a href="./shop">Shop</a></li>
                     <li><a href="">Collection</a>
                         <ul class="dropdown">
                             <li><a href="">Men's</a></li>
@@ -174,8 +184,8 @@
                             <li><a href="">Kid's</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class="{{ (request()->segment(1) == 'blog' ) ? 'active' : '' }}"><a href="./blog">Blog</a></li>
+                    <li class="{{ (request()->segment(1) == 'contact' ) ? 'active' : '' }}"><a href="./contact">Contact</a></li>
                     <li><a href="">Pages</a>
                         <ul class="dropdown">
                             <li><a href="blog-details.html">Blog Details</a></li>
@@ -195,6 +205,10 @@
     </div>
 </header>
 <!-- header section end  -->
+
+
+
+
 
 {{--Body Here--}}
 @yield('body')

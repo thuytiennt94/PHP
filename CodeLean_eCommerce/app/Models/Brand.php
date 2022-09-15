@@ -13,7 +13,7 @@ class Brand extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function products(){
+    public function product(){
         return $this->hasMany(Product::class,'brand_id','id');
     }
 }

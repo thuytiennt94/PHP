@@ -13,7 +13,7 @@ class Blog extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function blogComments(){
+    public function blogComment(){
         return $this->hasMany(BlogComment::class,'blog_id', 'id');
     }
 }
