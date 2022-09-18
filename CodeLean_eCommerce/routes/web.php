@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,11 +30,19 @@ Route::prefix('cart')->group(function (){
     Route::get('/add/{id}', [Front\CartController::class, 'add']);
     Route::get('/', [Front\CartController::class, 'index']);
 
-    Route::get('delete/{rowId}', [Front\ShopController::class,  'delete']);
+    Route::get('delete/{rowId}', [Front\CartController::class,  'delete']);
 
-    //Route::get('/{categoryName}', [Front\ShopController::class,  'category']);
+    Route::get('/destroy', [Front\CartController::class,  'destroy']);
+
+    Route::get('/update', [Front\CartController::class,  'update']);
 });
 
+Route::prefix('checkout')->group(function (){
+    Route::get('/', [Front\CheckOutController::class, 'index']);
+    Route::post('/', [Front\CheckOutController::class, 'addOrder']);
+    Route::get('/vnPayCheck', [Front\CheckOutController::class, 'vnPayCheck']);
+    Route::get('/result', [Front\CheckOutController::class, 'result']);
+});
 
 
 

@@ -250,7 +250,28 @@
 			}
 		}
 		$button.parent().find('input').val(newVal);
+
+        //update cart
+        const rowId = $button.parent().find('input').data('rowid');
+        updateCart(rowId, newVal);
 	});
+
+    function updateCart(rowId, qty) {
+        $.ajax({
+            type: 'GET',
+            url: 'cart/update',
+            data: {rowId: rowId, qty: qty},
+            success: function (response){
+                //alert('Update successful');
+                console.log(response);
+                location.reload();
+            },
+            error: function (error){
+                alert('Update failed');
+                console.log(error);
+            },
+        });
+    }
 
 
     /*-------------------

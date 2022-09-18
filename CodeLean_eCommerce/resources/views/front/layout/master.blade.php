@@ -60,7 +60,7 @@
                     Login
                 </a>
                 <div class="lan-selector">
-                    <select name="countries" id="countries" class="language_drop" style="width: 300px ;">
+                    <select name="countries" id="countries" class="language_drop" style="width: 300px ;content: "09";">
                         <option value="yu" data-image="front/img/flag-1.jpg" alt="" data-imagecss="flag yu"
                                 data-title="English">English
                         </option>
@@ -130,7 +130,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="si-close">
-                                                    <i class="ti-close"></i>
+                                                    <i onclick="window.location='./cart/delete/{{ $cart->rowId }}'" class="ti-close"></i>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -144,11 +144,11 @@
                                 </div>
                                 <div class="select-button">
                                     <a href="./cart" class="primary-btn view-card">View Card</a>
-                                    <a href="check-out.html" class="primary-btn checkout-btn">Check out</a>
+                                    <a href="./checkout" class="primary-btn checkout-btn">Check out</a>
                                 </div>
                             </div>
                         </li>
-                        <li class="cart-price">$158.00</li>
+                        <li class="cart-price">${{ Cart::total() }}</li>
                     </ul>
                 </div>
             </div>
