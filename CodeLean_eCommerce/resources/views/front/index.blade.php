@@ -237,7 +237,7 @@
                                 <div class="tag-list">
                                     <div class="tag-item">
                                         <i class="fa fa-calendar-o"></i> &nbsp;
-                                        {{ date('M d, Y', strtotime($blog->created_at)) }}
+                                        {{ date('M d, Y', strtotime($blog->created_at))  }}
                                     </div>
                                     <div class="tag-item">
                                         <i class="fa fa-comment-o"></i>

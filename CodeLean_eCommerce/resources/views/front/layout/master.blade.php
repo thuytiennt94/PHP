@@ -60,7 +60,7 @@
                     Login
                 </a>
                 <div class="lan-selector">
-                    <select name="countries" id="countries" class="language_drop" style="width: 300px ;content: "09";">
+                    <select name="countries" id="countries" class="language_drop" style="width: 300px ;">
                         <option value="yu" data-image="front/img/flag-1.jpg" alt="" data-imagecss="flag yu"
                                 data-title="English">English
                         </option>
@@ -207,7 +207,7 @@
 <!-- header section end  -->
 
 
-
+@yield('body')
 
 
 {{--Body Here--}}

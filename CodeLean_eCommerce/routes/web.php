@@ -13,7 +13,11 @@ use App\Http\Controllers\Front;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [Front\HomeController::class, 'index']);
+
+Route::get('/', function (App\Repositories\product\ProductRepositoryInterface $productRepository){
+    return $productRepository->all();
+});
+//Route::get('/', [Front\HomeController::class, 'index']);
 
 
 Route::prefix('shop')->group(function (){

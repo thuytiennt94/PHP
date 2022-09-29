@@ -220,12 +220,17 @@
                                             </div>
                                             <div class="avatar-text">
                                                 <div class="at-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
+                                                    @for($i = 1;$i <= 5; $i++)
+                                                        @if($i <= $avgRating)
+                                                            <i class="fa fa-star"></i>
+                                                        @else
+                                                            <i class="fa fa-star-o"></i>
+                                                        @endif
+                                                    @endfor
+
+                                                    <span>({{ count($product->productComments) }})</span>
                                                 </div>
+
                                                 <h5>{{ $productComment->name }} <span> {{ date('M d, Y', strtotime($productComment->created_at)) }} </span></h5>
                                                 <div class="at-reply">{{ $productComment->messages }}</div>
                                             </div>
